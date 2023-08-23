@@ -1,0 +1,4 @@
+
+@mixin linearGradients($dir, $colOne, $colTwo, $colThree) {
+    background-image: linear-gradient($dir, $colOne, $colTwo, $colThree) ;
+}

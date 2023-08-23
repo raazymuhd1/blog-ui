@@ -1,0 +1,36 @@
+@use "../../styles/breakpoints" as breakpoints;
+@use "../../styles/colors" as colors;
+@use "sass:map";
+
+.lists_container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+     @include breakpoints.md {
+        flex-direction: column;
+        justify-content: center;
+        height: 70%;
+        gap: 30px;
+        width: 100%;
+    }
+}
+
+
+.list_item {
+    list-style: none;
+    border: solid map.get(colors.$Colors, main) 2px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    white-space: nowrap;
+    padding: 5px 10px;
+
+    @include breakpoints.xs {
+        font-size: 14px;
+    }
+}
+
+
+
+

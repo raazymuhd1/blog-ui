@@ -1,0 +1,79 @@
+@use "../../styles/gradients" as gradient;
+@use "../../styles/colors" as colors;
+@use "../../styles/breakpoints" as breakpoints;
+@use "sass:map";
+
+.header {
+    height: 100px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    font-family: chibold;
+    letter-spacing: 1.5px;
+    color: map.get(colors.$Colors, main); 
+    @include gradient.linearGradients(110deg, #1a931c, #066066, #232121);
+
+    .nav {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(200px, 400px));
+        align-items: center;
+        justify-content: space-between;
+        width: 80%;
+        height: 100%;
+        margin: 0 auto;
+        
+        @include breakpoints.md {
+            justify-content: space-between;
+            width: 100%;
+            grid-template-columns: repeat(2, minmax(30px, 50px));
+        }
+
+        .navlist {
+            display: inline;
+    
+            @include breakpoints.md {
+                display: none;
+                background-color: red;
+            }
+        }
+    
+        .heading {
+            font-weight: bold;
+            font-size: 25px;
+
+            @include breakpoints.md {
+                font-size: 20px;
+            }
+        }
+
+        .icon {
+            display: none;
+            
+            @include breakpoints.md {
+                font-size: 150px;
+                font-weight: bold;
+                color: map-get(colors.$Colors, main);
+                cursor: pointer;
+            }
+        }
+    }
+
+    .mobileNav_container {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        padding: 10px;
+        transition: all 0.5s ease-in-out;
+         @include gradient.linearGradients(50deg, #82a01f, #453a3a, #aa8027);
+
+        .mobile_top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            margin: 20px auto;
+        }
+    }
+
+}

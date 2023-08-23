@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+:root {
+    --background: url("../assets/images/blog2.jpg");
+    --form-bg: rgb(239, 245, 243);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: chibold;
+    src: url("../assets/fonts/CHIBOLD\ demo.ttf");
+    font-weight: 300;
+}
+
+.form {
+    background-color: var(--form-bg);
+    backdrop-filter: blur(-20px);
+}
+
+.textInput:focus {
+   border: none;
+}
+
+.signup_bg {
+    background-image: var(--background);
+    background-repeat: no-repeat;
+    background-size: fill;
+}
+
+.signin_bg {
+    background-image: var(--background);
+    background-repeat: no-repeat;
+    background-size: fill;
+} 
