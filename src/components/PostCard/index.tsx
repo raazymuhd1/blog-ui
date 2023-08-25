@@ -1,12 +1,17 @@
+import { FC } from "react"
 import Image from "next/image"
 import BgBlog from "@/assets/images/bg-blog.jpg"
 import Link from "next/link"
 
-const PostCard = () => {
+interface IPost {
+  styles: string;
+}
+
+const PostCard: FC<IPost> = ({ styles }: IPost) => {
   return (
     <Link
         href={`/post-detail/${1}`} 
-        className='flex flex-col min-h-[300px] w-[350px] rounded-[15px] gap-[10px] cursor-pointer hover:shadow-lg transition-shadow duration-500 bg-[#ebdfdf] outline-[2px] outline outline-offset-[8px] outline-[#f1eaea]'>
+        className={`flex flex-col ${styles} rounded-[15px] gap-[10px] cursor-pointer hover:shadow-lg transition-shadow duration-500 bg-main outline-[2px] outline outline-offset-[8px] outline-[#f1eaea]`}>
         <Image 
             src={BgBlog} 
             width={0} 

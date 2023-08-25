@@ -6,6 +6,7 @@
 .header {
     height: 100px;
     position: sticky;
+    z-index: 2;
     top: 0;
     width: 100%;
     font-family: chibold;
@@ -14,19 +15,18 @@
     @include gradient.linearGradients(110deg, #1a931c, #066066, #232121);
 
     .nav {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(200px, 400px));
+        display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 80%;
+        width: 90%;
         height: 100%;
         margin: 0 auto;
         
-        @include breakpoints.md {
-            justify-content: space-between;
-            width: 100%;
-            grid-template-columns: repeat(2, minmax(30px, 50px));
-        }
+        // @include breakpoints.md {
+        //     justify-content: space-between;
+        //     width: 100%;
+        //     grid-template-columns: repeat(2, minmax(30px, 50px));
+        // }
 
         .navlist {
             display: inline;

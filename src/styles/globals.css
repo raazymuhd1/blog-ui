@@ -40,3 +40,34 @@
     background-repeat: no-repeat;
     background-size: fill;
 } 
+
+
+/* profile */
+
+.profile_banner {
+    background: url("../assets/images/user-banner.jpg");
+    background-position: 25% 35%;
+    position: relative;
+    top: 0;
+}
+
+.profile_banner::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    content: "";
+    background-color: rgba(80, 79, 79, 0.5);
+    backdrop-filter: blur(-20px);
+}
+
+.text_shadow {
+    text-shadow: 2px 2px 6px #5a4d4d, -2px -2px 6px #5a4d4d;
+}
+
+.shadow_box {
+    box-shadow: 2px 2px 16px 2px #969494, -2px -2px 16px 2px #969494;
+}

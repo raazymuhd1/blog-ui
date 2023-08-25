@@ -19,14 +19,14 @@ const Explore = () => {
                 
                 <div className={`${postParentStyle}`}>
                     { [0,1,2,3,4].map(item => (
-                        <PostCard />
+                        <PostCard styles='min-h-[300px] w-[350px]' />
                     )) }
                 </div>
 
                 <h2 className={`${headingStyle} mt-[60px]`}> Last Week Posts </h2>
                 <div className={`${postParentStyle}`}>
                     { [0,1,2,3,4].map(item => (
-                        <PostCard />
+                        <PostCard styles='min-h-[300px] w-[350px]' />
                     )) }
                 </div>
             </div>
@@ -36,7 +36,7 @@ const Explore = () => {
                 <h2 className='lg:text-[18px] text-[16px] font-chibold font-semibold text-secondary'> * Categories </h2>
 
                 <div 
-                    className='flex flex-col gap-[10px] outline w-full mt-[20px] min-h-[350px] outline-offset-[8px] outline-[#f1eaea] bg-[#ebdfdf] outline-[2px] rounded-[10px] p-[15px]'>
+                    className='flex flex-col gap-[10px] outline w-full mt-[20px] min-h-[350px] outline-offset-[8px] outline-[#f1eaea] bg-main outline-[2px] rounded-[10px] p-[15px]'>
                     { [0,1,2,3,].map(item => (
                         <Categories />
                     )) }
