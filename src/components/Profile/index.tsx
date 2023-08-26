@@ -2,12 +2,17 @@
 import React, { FC, useState } from 'react'
 import Image from "next/image"
 import profile from "@/assets/images/user-profile.jpg"
+import { useQuery } from '@apollo/client'
+import { GET_USER } from "@/graphql/queries"
 import { ProfileUpdate, ProfileTab, UserPosts } from '..'
 
 const Profile: FC = () => {
     const [activeTab, setActiveTab] = useState<boolean>(false)
      const [leftTab, setLeftTab] = useState<boolean>(true)
      const [rightTab, setRightTab] = useState<boolean>(false)
+     const {data: user, loading} = useQuery(GET_USER, { variables: { userId: '64ea0e33320391b809c9d370' } })
+     
+     console.log(user.user)
 
   return (
     <section className='w-full flex flex-col'>

@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { ChangeEvent, FC } from 'react'
 
 interface IProps {
   styles: string
@@ -8,9 +8,12 @@ interface IProps {
     type: string;
   }
   htmlFor: string
+  value: string
+  name: string 
+  handleChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
-const TextField: FC<IProps> = ({ styles, rest, htmlFor }: IProps) => {
+const TextField: FC<IProps> = ({ styles, rest, htmlFor, handleChange, value, name }: IProps) => {
   return (
     <div className='w-full flex flex-col gap-[5px]'>
        <label 
@@ -20,9 +23,12 @@ const TextField: FC<IProps> = ({ styles, rest, htmlFor }: IProps) => {
         </label>
        <input
           id={rest.id} 
-          type={rest.type} 
+          type={rest.type}
+          value={value}
+          name={name} 
           placeholder={rest.placeholder}
-          className='px-[10px] py-[5px] border-b-[1px] border-b-secondary outline-none textInput placeholder:tracking-[1.5px] bg-transparent rounded-[10px] ' 
+          className='px-[10px] py-[5px] border-b-[1px] border-b-secondary outline-none textInput placeholder:tracking-[1.5px] bg-transparent rounded-[10px] '
+          onChange={handleChange}
         />
     </div>
   )

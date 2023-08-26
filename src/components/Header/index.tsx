@@ -9,7 +9,7 @@ const Header = () => {
      const [open, setOpen] = useState(false)
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} border-b-[2px] border-b-main`}>
         <nav className={styles.nav}>
            <h2 className={styles.heading}> GraphBlog </h2>
            <div className={styles.navlist}>
