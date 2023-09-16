@@ -1,8 +1,17 @@
-import React from 'react'
+"use client"
+import React, { FC, useState } from 'react'
 import { TextField, CustomBtn } from '@/components'
 import Link from "next/link"
 
-const Login = () => {
+type LoginForm = {
+    email: string;
+    password: string;
+}
+
+const Login: FC = () => {
+      const [loginForm, setLoginForm] = useState<LoginForm>({ email: "", password: "" })
+      const { email, password } = loginForm;
+
   return (
     <div className='signin_bg flex h-screen w-full flex-col justify-center'>
         <form 
@@ -11,18 +20,23 @@ const Login = () => {
               rest={{ id: "email", type: "email", placeholder: "email" }}
               styles=''
               htmlFor='email'
+              name='email'
+              value={email}
               />
             <TextField 
               rest={{ id: "password", type: "password", placeholder: "password" }}
               styles=''
               htmlFor='password'
+              name="password"
+              value={password}
               />
 
               <div className="flex flex-col gap-[15px]">
                 <CustomBtn 
                   title='Signin' 
                   parentStyles='mt-[20px] w-[30%]' 
-                  btnStyles='w-full font-patrick font-semibold tracking-[1.5px] md:text-[18px] text-[16px] bg-secondary text-[#fff]' 
+                  btnStyles='w-full font-patrick font-semibold tracking-[1.5px] md:text-[18px] text-[16px] bg-secondary text-[#fff]'
+                  type="submit" 
                 />
                 <p className='font-patrick md:text-[16px] text-[14px] font-normal'> 
                   Don't  have an account? 

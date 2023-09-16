@@ -12,7 +12,7 @@ const Profile: FC = () => {
      const [rightTab, setRightTab] = useState<boolean>(false)
      const {data: user, loading} = useQuery(GET_USER, { variables: { userId: '64ea0e33320391b809c9d370' } })
      
-     console.log(user.user)
+     console.log(user?.user)
 
   return (
     <section className='w-full flex flex-col'>
